@@ -21,7 +21,7 @@ public class UserPosDAO {
 	/* METODO INSERT */
 	public void salvar(Userposjava userposjava) {
 		try {
-			String sql = "insert into userposjava (id, nome, email) values (?,?,?)";
+			String sql = "insert into userposjava (id, nome, email) values (?,?,?)";   //nao precisa setar o ID se tiver sequencia no banco de dados
 			PreparedStatement insert = connection.prepareStatement(sql);
 			insert.setLong(1, userposjava.getId());
 			insert.setString(2, userposjava.getNome());
@@ -90,6 +90,24 @@ public class UserPosDAO {
 			e.printStackTrace();
 		}
 
+	}
+	
+	public void deletar (Long id) {
+		try {
+			String sql = "delete from userposjava where id = " +id;
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.execute();
+			connection.commit();
+			
+		} catch (Exception e) {
+			try {
+				connection.rollback();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+			e.printStackTrace();
+		}
+		
 	}
 
 }

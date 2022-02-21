@@ -1,12 +1,13 @@
 package pos_java_jdbc.pos_java_jdbc;
 
 
-import java.util.List;
+
 
 import org.junit.Test;
 
 import dao.UserPosDAO;
 import model.Userposjava;
+
 
 public class TesteBancoJdbc {
 	
@@ -19,7 +20,7 @@ public class TesteBancoJdbc {
 	/*	UserPosDAO userPosDAO = new UserPosDAO();
 		Userposjava userposjava = new Userposjava();
 		
-		userposjava.setId(4L);
+		userposjava.setId(4L);       //se colocar uma sequencia no banco de dados nao precisa setar o ID
 		userposjava.setNome("Adolfo");
 		userposjava.setEmail("adolfo.landgraf@gmail.com");
 		
@@ -57,7 +58,7 @@ public class TesteBancoJdbc {
 		try {
 			UserPosDAO dao = new UserPosDAO();
 			Userposjava objetoBanco = dao.buscar(4L);
-			objetoBanco.setNome("Adolfo");
+			objetoBanco.setNome("Adolfo5");
 			dao.atualizar(objetoBanco);
 			
 		} catch (Exception e) {
@@ -65,6 +66,17 @@ public class TesteBancoJdbc {
 		}
 		
 		
+		
+		/*** METODO EXCLUIR */
+	/*		try {
+				UserPosDAO dao = new UserPosDAO();
+				dao.deletar(3L);
+			} catch (Exception e) {
+			e.printStackTrace();
+			} */
+		}
+		
 	}
 	
-} 
+		
+
